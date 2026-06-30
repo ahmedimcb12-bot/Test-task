@@ -19,15 +19,15 @@ app.add_middleware(
 
 
 
-from app.model.transfer import Transfer
+from model.transfer import Transfer
 # Apni organization model file ka sahi path likhein taake table register ho sake:
-from app.model.organization_data import OrganizationDatadb
-from app.model.user import Organization 
-from app.core.database import Base, engine
+from model.organization_data import OrganizationDatadb
+from model.user import Organization 
+from core.database import Base, engine
 from fastapi import FastAPI, Depends
 
-from app.router import auth, rows, orgdata
-from app.router.auth import verify_authentication_token # Router se import kiya
+from router import auth, rows, orgdata
+from router.auth import verify_authentication_token # Router se import kiya
 
 
 Base.metadata.create_all(bind=engine)
